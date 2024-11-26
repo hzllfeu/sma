@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:sma/Screens/Settings.dart';
 import 'package:sma/Utils/PopupMessage.dart';
 import 'package:sma/Utils/PreferencesManager.dart';
 
@@ -41,9 +42,7 @@ class _NavigatorState extends State<Navigator> {
       child: Text("Home"),
     ),
     Calendar(),
-    const Center(
-      child: Text("Abcences"),
-    ),
+    Settings(),
   ];
 
   @override

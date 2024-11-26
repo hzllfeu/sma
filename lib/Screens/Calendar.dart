@@ -29,7 +29,7 @@ class _CalendarState extends State<Calendar> {
         backgroundColor: const Color(0xFFFFFAFA),
         body: SafeArea(
           child: SfCalendar(
-            backgroundColor: const Color(0xFFFBFFFE),
+            backgroundColor: Colors.white,
             view: CalendarView.workWeek,
             firstDayOfWeek: 1,
             todayHighlightColor: PreferencesManager().accent,
