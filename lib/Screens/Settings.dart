@@ -41,40 +41,44 @@ class _SettingsState extends State<Settings> {
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: PreferencesManager().accent,
-                          width: 1,
-                        ),
+                        color: PreferencesManager().accent.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(14),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+
                         children: [
-                          Row(
-                            children: [
-                              HugeIcon(
-                                icon: HugeIcons.strokeRoundedUserEdit01,
-                                color: Colors.black.withOpacity(0.8),
-                                size: 18,
-                              ),
-                              const Gap(15),
-                              Text(
-                                "Votre compte",
-                                style: TextStyle(
-                                    color: Colors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Votre compte",
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16
+                                  ),
                                 ),
-                              ),
-                            ],
+                                HugeIcon(
+                                  icon: HugeIcons.strokeRoundedUserEdit01,
+                                  color: Colors.black.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ],
+                            ),
                           ),
-                          const Gap(15),
-                          Text(
-                            "Email",
-                            style: TextStyle(
-                                color: Colors.black.withOpacity(0.6),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14
+                          const Gap(20),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Text(
+                              "Email",
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14
+                              ),
                             ),
                           ),
                           const Gap(5),
@@ -82,8 +86,49 @@ class _SettingsState extends State<Settings> {
                             width: double.infinity,
                             height: 40,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Colors.black.withOpacity(0.3),
+                              borderRadius: BorderRadius.circular(10),
+                              color: PreferencesManager().accent.withOpacity(0.15),
+                            ),
+                            child: Row(
+                              children: [
+                                const Gap(15),
+                                Text(
+                                  "louis.mouchon@edu.devinci.fr",
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Gap(10),
+                          Container(
+                            width: double.infinity,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: PreferencesManager().secondary.withOpacity(0.4),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Se déconnecter",
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15
+                                  ),
+                                ),
+                                const Gap(10),
+                                HugeIcon(
+                                  icon: HugeIcons.strokeRoundedLogoutSquare01,
+                                  color: Colors.black.withOpacity(0.9),
+                                  size: 18,
+                                ),
+                              ],
                             ),
                           )
                         ],
@@ -94,34 +139,34 @@ class _SettingsState extends State<Settings> {
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: PreferencesManager().accent,
-                          width: 1,
-                        ),
+                        color: PreferencesManager().accent.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(14),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              HugeIcon(
-                                icon: HugeIcons.strokeRoundedNotification02,
-                                color: Colors.black.withOpacity(0.8),
-                                size: 18,
-                              ),
-                              const Gap(15),
-                              Text(
-                                "Notifications",
-                                style: TextStyle(
-                                    color: Colors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Préférences",
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16
+                                  ),
                                 ),
-                              ),
-                            ],
+                                HugeIcon(
+                                  icon: HugeIcons.strokeRoundedSettings05,
+                                  color: Colors.black.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ],
+                            ),
                           ),
-                          const Gap(200),
+                          const Gap(150),
                         ],
                       ),
                     ),
@@ -130,34 +175,34 @@ class _SettingsState extends State<Settings> {
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: PreferencesManager().accent,
-                          width: 1,
-                        ),
+                        color: PreferencesManager().accent.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(14),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              HugeIcon(
-                                icon: HugeIcons.strokeRoundedConfiguration01,
-                                color: Colors.black.withOpacity(0.8),
-                                size: 18,
-                              ),
-                              const Gap(15),
-                              Text(
-                                "Personalisation",
-                                style: TextStyle(
-                                    color: Colors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Notifications",
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16
+                                  ),
                                 ),
-                              ),
-                            ],
+                                HugeIcon(
+                                  icon: HugeIcons.strokeRoundedNotification02,
+                                  color: Colors.black.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ],
+                            ),
                           ),
-                          const Gap(200),
+                          const Gap(150),
                         ],
                       ),
                     ),

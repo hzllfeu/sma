@@ -26,7 +26,7 @@ class _NavigatorState extends State<Navigator> {
     setState(() {
       currentSelectedIndex = index;
     });
-    PopupManager().showmessage(text: "Page switched");
+    //PopupManager().showmessage(text: "Page switched");
   }
 
 
