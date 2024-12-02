@@ -45,6 +45,7 @@ dependencies:
   glassmorphism_ui: ^0.3.0
   syncfusion_flutter_calendar: ^27.2.3
   gap: ^3.0.1
+  icalendar_parser: ^2.1.0
 
 dev_dependencies:
   flutter_test:
