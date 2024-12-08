@@ -5,6 +5,7 @@ import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:sma/Utils/PopupMessage.dart';
 import 'package:sma/Utils/PreferencesManager.dart';
+import 'package:sma/Utils/StudentModel.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 
@@ -93,7 +94,7 @@ class _SettingsState extends State<Settings> {
                               children: [
                                 const Gap(15),
                                 Text(
-                                  "louis.mouchon@edu.devinci.fr",
+                                  StudentModel().email,
                                   style: TextStyle(
                                       color: Colors.black.withOpacity(0.7),
                                       fontWeight: FontWeight.w500,

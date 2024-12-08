@@ -9,9 +9,9 @@ class PopupManager {
 
   bool show = false;
   String txt = "";
-  Duration entryd = const Duration(milliseconds: 200);
+  Duration entryd = const Duration(milliseconds: 100);
   Duration midd = const Duration(milliseconds: 3500);
-  Duration exitd = const Duration(milliseconds: 200);
+  Duration exitd = const Duration(milliseconds: 100);
 
   final ValueNotifier<String> animationState = ValueNotifier("idle");
 
@@ -28,9 +28,9 @@ class PopupManager {
 
   Future<void> showmessage({
     required String text,
-    Duration entry = const Duration(milliseconds: 200),
-    Duration mid = const Duration(milliseconds: 3500),
-    Duration exit = const Duration(milliseconds: 200),
+    Duration entry = const Duration(milliseconds: 100),
+    Duration mid = const Duration(milliseconds: 3000),
+    Duration exit = const Duration(milliseconds: 100),
   }) async {
     if (show) {
       return; // Évite les superpositions multiples
@@ -45,7 +45,6 @@ class PopupManager {
     final overlayState = _navigatorKey.currentState?.overlay;
 
     if (overlayState == null) {
-      // Impossible de trouver l'Overlay, probablement parce que l'app n'est pas initialisée.
       show = false;
       return;
     }
@@ -87,18 +86,25 @@ class PopupManager {
                   builder: (context, state, child) {
                     double scale;
                     Duration duration;
+                    double opa;
 
                     if (state == "entry") {
                       scale = 1;
+                      opa = 1;
                       duration = entryd;
                     } else if (state == "mid") {
                       scale = 1;
+                      opa = 1;
+
                       duration = midd;
                     } else if (state == "exit") {
-                      scale = 0;
+                      scale = 0.6;
+                      opa = 0;
+
                       duration = exitd;
                     } else {
-                      scale = 0;
+                      scale = 0.6;
+                      opa = 0;
                       duration = const Duration(milliseconds: 0);
                     }
 
@@ -106,7 +112,11 @@ class PopupManager {
                       duration: duration,
                       scale: scale,
                       curve: Curves.easeInOut,
-                      child: child,
+                      child: AnimatedOpacity(
+                        opacity: opa,
+                        duration: const Duration(milliseconds: 100),
+                        child: child,
+                      ),
                     );
                   },
                   child: GlassContainer(

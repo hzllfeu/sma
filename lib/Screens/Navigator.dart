@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:sma/Screens/Settings.dart';
+import 'package:sma/Utils/AppointmentManager.dart';
 import 'package:sma/Utils/PopupMessage.dart';
 import 'package:sma/Utils/PreferencesManager.dart';
 
 import 'Calendar.dart';
+import 'Home.dart';
 
 
 class Navigator extends StatefulWidget {
@@ -34,13 +36,12 @@ class _NavigatorState extends State<Navigator> {
   void initState() {
     super.initState();
     currentSelectedIndex = widget.initialIndex;
+    AppointmentManager().loadAppointments();
   }
 
 
   List<Widget> pages = [
-    const Center(
-      child: Text("Home"),
-    ),
+    Home(),
     Calendar(),
     Settings(),
   ];
